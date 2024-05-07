@@ -1,0 +1,2 @@
+class Newsletterlist < ApplicationRecord
+end
