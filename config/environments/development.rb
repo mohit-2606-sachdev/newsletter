@@ -78,11 +78,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    address: 'smtp-relay.brevo.com',
-    port: 587,
-    user_name: 'sachdev516@gmail.com',
-    password: 'xsmtpsib-b15f9c03bb452a5c262305ba157221913fe3e0f10601b038c2190bbd6fff9ea9-69wbkdsaHNLthxB4',
-    authentication: 'plain',
-    enable_starttls_auto: true
-  }
+    address: ENV['SMTP_ADDRESS'],
+    port: ENV['SMTP_PORT'],
+    user_name: ENV['SMTP_USER_NAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: ENV['SMTP_AUTHENTICATION'],
+    enable_starttls_auto: ENV['SMTP_ENABLE_STARTTLS_AUTO'] == 'true'
+}
 end

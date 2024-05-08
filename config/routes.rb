@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -8,8 +10,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  post '/subscribers/subscribe', to: 'subscribers#subscribe'
-  delete '/subscribers/:id/unsubscribe', to: 'subscribers#unsubscribe'
-  get "/subscribers/send_emails", to: "subscribers#send_emails"
+  root 'subscribers#new'
+  post 'subscribe', to: 'subscribers#subscribe'
+  get '/unsubscribe/:id', to: 'subscribers#unsubscribe', as: 'unsubscribe'
   
 end
