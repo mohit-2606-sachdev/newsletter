@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root 'subscribers#new'
+  root 'subscribers#send_email_for_subscription'
+  get 'register', to: "subscribers#new" 
   post 'subscribe', to: 'subscribers#subscribe'
+  post 'send_email', to: 'subscribers#send_email'
   get '/unsubscribe/:id', to: 'subscribers#unsubscribe', as: 'unsubscribe'
   
 end

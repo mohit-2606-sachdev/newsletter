@@ -8,7 +8,7 @@ class SubscribersController < ApplicationController
           redirect_to root_path
         else
           flash[:error] = @subscriber.errors[:email][0]
-          redirect_to root_path
+          redirect_to register_path
         end
       end
 
@@ -26,5 +26,12 @@ class SubscribersController < ApplicationController
 
     def new
         @subscriber = Subscriber.new
+    end
+
+    def send_email_for_subscription
+    end
+
+    def send_email
+        NewsletterMailer.subscribe_link(params[:email]).deliver_now
     end
 end

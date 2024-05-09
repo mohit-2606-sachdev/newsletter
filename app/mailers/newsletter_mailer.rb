@@ -24,4 +24,9 @@ class NewsletterMailer < ApplicationMailer
         @unsubscriber = unsubscriber
         mail(to: @unsubscriber.email, subject: 'Unsubscribe from Our Newsletter')
       end
+
+      def subscribe_link(email)
+        @email = email
+        mail(to: @email, subject: 'Newsletter Subscribe')
+      end
 end

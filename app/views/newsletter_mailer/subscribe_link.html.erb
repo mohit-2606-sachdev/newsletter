@@ -31,13 +31,16 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Thank you for subscribing!</h1>
+      <h1>Subscribe Link</h1>
     </div>
     <div class="content">
-      <p>Dear Subscriber,</p>
-      <p>Thank you for subscribing to our newsletter. We're excited to have you on board!</p>
-      <p>You'll now receive regular updates about our latest products, promotions, and news.</p>
-      <p>To Stop getting newsletter, click on the <a href="<%= unsubscribe_url(@user.id) %>">Unsubscribe</a></p>
+      <p>Dear User,</p>
+      <p>If you want to subscribe to our newletter then please click on the below button</p>
+      <br>
+      <a href="<%= register_url %>" target="_blank" style="padding: 12px 18px; border-radius: 4px; font-size: 16px; font-weight: bold; color: #ffffff; text-decoration: none; display: inline-block; background-color: #007bff;">
+        Subscribe
+        </a>
+
     </div>
     <div class="footer">
       <p>If you have any questions or concerns, please don't hesitate to contact us.</p>
